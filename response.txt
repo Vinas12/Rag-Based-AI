@@ -1,0 +1,9 @@
+I see you're watching our course on web development. You've got a question about where HTML and CSS are taught in this course.
+
+So, let's break it down. We start with the basics of installing VS Code and understanding how websites work (Video 1). This is where we introduce the concept of HTML, and by the end of this video, you'll have a good grasp of what HTML is and its role in building websites.
+
+In Video 4, we dive deeper into HTML attributes, which is exactly what you're asking about. We cover various attributes like "href" for links and "id" for unique identifiers, among others.
+
+As we progress through the course, we continue to build on this foundation, exploring more advanced topics in HTML, CSS, and JavaScript. But if you want to get specific about where HTML and CSS are taught in detail, I'd recommend checking out Video 4, specifically from timestamp 564 seconds onwards.
+
+If you have any further questions or need clarification on anything else related to web development, feel free to ask!

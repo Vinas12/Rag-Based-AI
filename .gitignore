@@ -1,0 +1,9 @@
+.venv/
+videos/
+audios/
+
+*.parquet
+*.joblib
+
+__pycache__/
+*.pyc
