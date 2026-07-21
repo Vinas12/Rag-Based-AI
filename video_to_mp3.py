@@ -8,8 +8,16 @@ for file in files:
 
     #now i want to print tutorial number and file name 
 
-    tutorial_number = file.split(" #")[1]
+    #examples of the filenames
+    /* "Lecture 1 ｜ Python Basics #001.mp4",
+        "Lecture 2 ｜ Variables #002.mp4",
+        "Lecture 3 ｜ Loops #003.mp4" */
 
-    file_name = file.split(" ｜ ")[0]
+    tutorial_number = file.split(" #")[1] #1st number of position
+
+    file_name = file.split(" ｜ ")[0]#0th nuber of position
     print(tutorial_number,file_name)
+
+    #this is for convert all the mp4(videos) file into audio(mp3) files.
+    #subprocess.run(input,output)
     subprocess.run(["ffmpeg", "-i" ,f"videos/{file}", f"audios/{tutorial_number}_{file_name}.mp3" ])
