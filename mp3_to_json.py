@@ -13,14 +13,17 @@ for audio in audios:
         model = whisper.load_model("large-v2")
 
         result = model.transcribe(f"audios/{audio}",
-        #result = model.transcribe(f"audios/sample.mp3",
-                                    language = "hi",
+                                    language = "hi",#hindi
                                     task="translate",
-                                    word_timestamps=False)
+                                    word_timestamps=False)#Generate timestamp for each sentence,not words
 
         chunks = []
         for segment in result["segments"]:
-            chunks.append({"number":numbers,"title":title,"start":segment["start"],"end":segment["end"],"text":segment["text"]})
+            chunks.append({"number":numbers
+                           ,"title":title,
+                           "start":segment["start"],
+                           "end":segment["end"],
+                           "text":segment["text"]})
 
         chunks_with_matadata = {"chunks":chunks , 
                                 "text": result["text"]
