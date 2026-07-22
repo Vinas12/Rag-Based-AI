@@ -17,6 +17,7 @@ for audio in audios:
                                     task="translate",
                                     word_timestamps=False)#Generate timestamp for each sentence,not words
 
+        print(result)
         chunks = []
         for segment in result["segments"]:
             chunks.append({"number":numbers
