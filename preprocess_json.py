@@ -2,8 +2,6 @@ import requests
 import os 
 import json
 import pandas as pd 
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np 
 import joblib
 
 
