@@ -5,7 +5,7 @@ import pandas as pd
 import joblib
 
 
-def create_embedding(texts0000):
+def create_embedding(texts):
     print("thinking...")
     r = requests.post("http://localhost:11434/api/embed",json={
     "model":"bge-m3",
@@ -28,7 +28,7 @@ for json_file in jsons:
     
     with open(f"newjsons/{json_file}") as f:
         content = json.load(f)
-    all_texts = [c["text"] for c in content["chunks"]]
+    texts = [c["text"] for c in content["chunks"]]
     embedding = create_embedding(texts)
 
 
@@ -48,8 +48,8 @@ for json_file in jsons:
     # print(my_dict)
 
 
-df = pd.DataFrame.from_records(my_dict)
+df = pd.DataFrame.from_records(my_dict)#create a dataframe
 
-joblib.dump(df,"embedding.joblib")
-#save this dataframe 
+joblib.dump(df,"embedding.joblib")#save this dataframe 
+
 print(len("embedding.joblib"))
