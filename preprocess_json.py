@@ -6,7 +6,7 @@ import joblib
 
 
 def create_embedding(texts):
-    print("thinking...")
+    print("thinking...")#this is the local port of ollama
     r = requests.post("http://localhost:11434/api/embed",json={  #send the post request to your local ollama server,/api/embed endpoint takes a model name and some input text, and returns vector embeddings for that text. 
     "model":"bge-m3",
     "input":all_text
