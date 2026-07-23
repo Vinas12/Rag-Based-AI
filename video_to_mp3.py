@@ -1,6 +1,6 @@
 #converts videos to mp3
 import os
-import subprocess
+import subprocess #python module used to run external commands like ffmpeg
 
 files = os.listdir("videos")
 
