@@ -1,4 +1,4 @@
-import whisper
+import whisper #this is used to convert mp3 to wishper 
 import json
 import os
 
