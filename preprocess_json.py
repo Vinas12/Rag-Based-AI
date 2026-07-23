@@ -1,11 +1,11 @@
-import requests 
+import requests #is a python tool used to send the http requests using python
 import os 
 import json
 import pandas as pd 
 import joblib
 
 
-def create_embedding(all_text):
+def create_embedding(texts0000):
     print("thinking...")
     r = requests.post("http://localhost:11434/api/embed",json={
     "model":"bge-m3",
@@ -24,10 +24,12 @@ chunk_id = 0
 
 for json_file in jsons:
     print(f"Creating Embeddings for {json_file}")
+
+    
     with open(f"newjsons/{json_file}") as f:
         content = json.load(f)
     all_texts = [c["text"] for c in content["chunks"]]
-    embedding = create_embedding(all_texts)
+    embedding = create_embedding(texts)
 
 
     total = len(content["chunks"])
@@ -38,6 +40,7 @@ for json_file in jsons:
         chunk["embedding"] = embedding[i]
         chunk["filename"] = json_file
         my_dict.append(chunk)
+
 
         #print(f"{i+1}/{total} - chunk_id:{chunk_id} chunks done ...")
         # print(f"text :{chunk['text']}")
