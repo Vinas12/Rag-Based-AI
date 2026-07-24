@@ -16,7 +16,7 @@ def create_embedding(texts):
     embedding = r.json()["embeddings"]
     return embedding
 
-jsons = os.listdir("newjsons")
+jsons = os.listdir("newjsons") #use newjsons fro the testing insted of jsons
 #print(jsons)
 
 my_dict = []
@@ -26,7 +26,7 @@ for json_file in jsons:
     print(f"Creating Embeddings for {json_file}")
 
     
-    with open(f"newjsons/{json_file}") as f:
+    with open(f"newjsons/{json_file}") as f: #neewjsons insted of the jsons for testing because chunks in the newjsons are very large
         content = json.load(f)
     texts = [c["text"] for c in content["chunks"]]
     embedding = create_embedding(texts)
